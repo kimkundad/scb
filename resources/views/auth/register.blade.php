@@ -190,7 +190,7 @@ hr {
 
 
                             <select class="form-control" name="group_user">
-                            <option value="">--Please Selete--</option>
+                            <option value="">--Please select--</option>
                             @foreach($objs as $obj)
                             <option value="{{$obj->id}}">{{$obj->group_name}}</option>
                             @endforeach
