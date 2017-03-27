@@ -15,6 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+Route::get('/thx', function () {
+    return view('home');
+});
+
 Route::get('/course', function () {
     return view('course.index');
 });

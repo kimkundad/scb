@@ -152,7 +152,7 @@ class RegisaccountController extends Controller
            // send email
 
 
-      return redirect(url('/'))->with('success','เพิ่มบัญชีผู้ใช้งานเสร็จเรียบร้อยแล้ว');
+      return redirect(url('/thx'))->with('success','เพิ่มบัญชีผู้ใช้งานเสร็จเรียบร้อยแล้ว');
 
     }
 

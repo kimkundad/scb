@@ -88,6 +88,8 @@
                       <th>อีเมล</th>
                       <th>เบอร์โทร</ht>
                       <th>กลุ่ม</th>
+                      <th>ตำแหน่ง</th>
+                      <th>บริษัท</th>
                       <th>วันที่สมัคร</th>
                       <th>Actions</th>
                     </tr>
@@ -100,7 +102,9 @@
                       <td>{{$u->name_user}}</td>
                       <td>{{$u->email_user}}</td>
                       <td>{{$u->phone_user}}</td>
-                      <td>{{$u->group_user}}</td>
+                      <td>{{$u->group_name}}</td>
+                      <td>{{$u->position_user}}</td>
+                      <td>{{$u->company_user}}</td>
                       <td>{{$u->created_at}}</td>
 
 

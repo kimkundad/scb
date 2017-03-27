@@ -33,8 +33,8 @@
 
         <header class="header">
                 <div class="logo-container">
-                    <a href="#" class="logo pull-left">
-                    <img src="{{asset('./assets/image/logo-scb.png')}}" height="40"  />
+                    <a href="#" class="logo pull-left" style="margin-top:0px;">
+                    <img src="{{asset('./assets/image/17580161_1772668092746926_2122572560_n.png')}}" height="52"  />
                 </a>
                     <div class="visible-xs toggle-sidebar-left" data-toggle-class="sidebar-left-opened"
                     data-target="html" data-fire-event="sidebar-left-opened">
@@ -64,7 +64,7 @@
     <!-- jQuery -->
 	@include('admin.layouts.inc-scripts')
 
-  
+
     @yield('scripts')
 
 

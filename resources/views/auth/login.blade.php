@@ -17,8 +17,8 @@
                     <div class="panel-body">
 
 
-                        <div class="current-user text-center">
-                            <img id="LockUserPicture" src="{{asset('./assets/image/logo-scb.png')}}" height="40px;">
+                        <div class="current-user text-center" style="margin-top: -5px;">
+                            <img id="LockUserPicture" src="{{asset('./assets/image/17580161_1772668092746926_2122572560_n.png')}}" height="80px;">
 
                         </div>
 

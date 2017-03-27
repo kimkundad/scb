@@ -16,7 +16,21 @@ class UseraccountController extends Controller
      */
     public function index()
     {
-      $objs = useraccount::all();
+      $objs = DB::table('useraccounts')
+            ->select(
+            'useraccounts.*',
+            'useraccounts.id as Aid',
+            'groupts.*',
+            'qrcords.qrcode as Qid',
+            'qrcords.*'
+            )
+            ->leftjoin('groupts', 'useraccounts.group_user', '=', 'groupts.id')
+            ->leftjoin('qrcords', 'useraccounts.id', '=', 'qrcords.user_id')
+            ->get();
+
+          //  dd($objs->group_name);
+
+
       $data['objs'] = $objs;
       $data['datahead'] = "รายชื่อในระบบทั้งหมด";
       $data['i'] = $i = 0;
@@ -24,7 +38,7 @@ class UseraccountController extends Controller
     }
 
 
-  
+
 
     /**
      * Show the form for creating a new resource.

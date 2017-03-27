@@ -3,7 +3,7 @@
 @section('content')
 <style>
 body{
-
+  background-color: #24292f;
 }
 .form-group {
     margin-bottom: 5px;
@@ -22,7 +22,7 @@ body{
     padding: 10px 25px;
 }
 .panel-default>.panel-heading {
-    background-image: url({{url('assets/image/student1.png')}});
+    background-image: url({{url('assets/image/17554834_1772523896094679_941988071_n.png')}});
 
 }
 .panel-heading {
@@ -70,18 +70,22 @@ hr {
     border: 0;
     border-top: 1px solid #eee;
 }
+.navbar-default {
+    background-color: #080808;
+    border-color: #484445;
+}
 </style>
 <div class="container" style="margin-top:30px;">
     <div class="row">
 
 
         <div class="col-md-4 col-md-offset-4">
-            <div class="panel panel-default" style="box-shadow: 0 3px 3px 3px #f4e6fe; border-color: #dabaf1;">
+            <div class="panel panel-default" >
               <div class="panel-heading">
 
                 <div class="row-fluid user-row">
 
-                <img src="{{url('assets/image/teacher1.png')}}" class="img-responsive imgpicture">
+                <img src="{{url('assets/image/17554834_1772523896094679_941988071_n.png')}}" class="img-responsive imgpicture">
 
                 </div>
               </div>

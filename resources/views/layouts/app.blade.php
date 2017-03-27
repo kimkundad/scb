@@ -24,6 +24,10 @@
         .fa-btn {
             margin-right: 6px;
         }
+        .navbar-default {
+            background-color: #080808;
+            border-color: #484445;
+        }
     </style>
 </head>
 <body id="app-layout">
