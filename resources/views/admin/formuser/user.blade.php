@@ -98,7 +98,7 @@
                     @if($objs)
                 @foreach($objs as $u)
                     <tr>
-                      <td>{{$u->Qid}}</td>
+                      <td><a data-toggle="modal" data-target=".bs-example-modal-sm">{{$u->Qid}}</a></td>
                       <td>{{$u->name_user}}</td>
                       <td>{{$u->email_user}}</td>
                       <td>{{$u->phone_user}}</td>
@@ -109,6 +109,16 @@
 
 
                       <td>
+
+                        <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                          <div class="modal-dialog modal-sm" role="document">
+                            <div class="modal-content">
+                              <img src="{!!$message->embedData(QrCode::format('png')->size(300)->generate({{$u->Qid}}), 'QrCode.png', 'image/png')!!}">
+                            </div>
+                          </div>
+                        </div>
+
+
                         <a style="float:left; margin-right:8px;" class="btn btn-primary btn-xs"
                         href="{{url('admin/user/'.$u->id.'/edit')}}" role="button"><i class="fa fa-wrench"></i> </a>
 
