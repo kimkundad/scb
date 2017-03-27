@@ -55,7 +55,6 @@ repeat-y;width:100%;display:block">
 <table style="width:100%;margin:5px 0 15px 0;padding:0;border-spacing:0">
   <tbody>
     <tr>
-    <td style="text-align:left;font-weight:bold;font-size:12px;vertical-align:top">QRCODE:</td>
       <td>
         <table style="margin-left:auto;font-size:12px">
           <tbody>
