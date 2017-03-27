@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests;
 use App\useraccount;
+use SimpleSoftwareIO\QrCode\BaconQrCodeGenerator;
 
 class UseraccountController extends Controller
 {
@@ -103,6 +104,8 @@ class UseraccountController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $obj = useraccount::find($id);
+      $obj->delete();
+      return redirect(url('admin/user'))->with('delete','Delete successful');
     }
 }

@@ -98,7 +98,7 @@
                     @if($objs)
                 @foreach($objs as $u)
                     <tr>
-                      <td><a data-toggle="modal" data-target=".bs-example-modal-sm">{{$u->Qid}}</a></td>
+                      <td><a data-toggle="modal" data-target=".bs-example-modal-sm-{{$u->Qid}}">{{$u->Qid}}</a></td>
                       <td>{{$u->name_user}}</td>
                       <td>{{$u->email_user}}</td>
                       <td>{{$u->phone_user}}</td>
@@ -110,19 +110,20 @@
 
                       <td>
 
-                        <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                        <div class="modal fade bs-example-modal-sm-{{$u->Qid}}" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
                           <div class="modal-dialog modal-sm" role="document">
                             <div class="modal-content">
-                              <img src="{!!$message->embedData(QrCode::format('png')->size(300)->generate({{$u->Qid}}), 'QrCode.png', 'image/png')!!}">
+
+                              <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(300)->generate('Make me into an QrCode!')) !!} ">
                             </div>
                           </div>
                         </div>
 
 
                         <a style="float:left; margin-right:8px;" class="btn btn-primary btn-xs"
-                        href="{{url('admin/user/'.$u->id.'/edit')}}" role="button"><i class="fa fa-wrench"></i> </a>
+                        href="{{url('admin/user/'.$u->Aid.'/edit')}}" role="button"><i class="fa fa-wrench"></i> </a>
 
-                          <form  action="{{url('admin/user/'.$u->id)}}" method="post" onsubmit="return(confirm('Do you want Delete'))">
+                          <form  action="{{url('admin/user/'.$u->Aid)}}" method="post" onsubmit="return(confirm('Do you want Delete'))">
                             <input type="hidden" name="_method" value="DELETE">
                              <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <button type="submit" class="btn btn-danger btn-xs"><i class="fa fa-times "></i></button>
