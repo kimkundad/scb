@@ -98,7 +98,7 @@
                     @if($objs)
                 @foreach($objs as $u)
                     <tr>
-                      <td><a data-toggle="modal" data-target=".bs-example-modal-sm-{{$u->Qid}}">{{$u->Qid}}</a></td>
+                      <td>{{$u->Qid}}</td>
                       <td>{{$u->name_user}}</td>
                       <td>{{$u->email_user}}</td>
                       <td>{{$u->phone_user}}</td>
@@ -110,14 +110,9 @@
 
                       <td>
 
-                        <div class="modal fade bs-example-modal-sm-{{$u->Qid}}" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
-                          <div class="modal-dialog modal-sm" role="document">
-                            <div class="modal-content">
-
-                              <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(300)->generate('Make me into an QrCode!')) !!} ">
-                            </div>
-                          </div>
-                        </div>
+                        <a style="float:left; margin-right:8px; " class="btn btn-success btn-xs " target="_blank"
+                             download="{{$u->qrcode}}.jpg" href="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(300)->generate($u->Qid)) !!}"
+                             role="button"><i class="fa fa-download"></i> </a>
 
 
                         <a style="float:left; margin-right:8px;" class="btn btn-primary btn-xs"
