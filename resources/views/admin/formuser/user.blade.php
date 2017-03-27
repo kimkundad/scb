@@ -83,7 +83,7 @@
                 <table id="example" class="display nowrap" cellspacing="0" width="100%">
                   <thead>
                     <tr>
-                      <th>#</th>
+                      <th>QR</th>
                       <th>ชื่อ-นามสกุล</th>
                       <th>อีเมล</th>
                       <th>เบอร์โทร</ht>
@@ -97,8 +97,8 @@
                   <tbody>
                     @if($objs)
                 @foreach($objs as $u)
-                    <tr {{$i++}}>
-                      <td>{{$i}}</td>
+                    <tr>
+                      <td>{{$u->Qid}}</td>
                       <td>{{$u->name_user}}</td>
                       <td>{{$u->email_user}}</td>
                       <td>{{$u->phone_user}}</td>
