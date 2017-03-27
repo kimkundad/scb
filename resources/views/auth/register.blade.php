@@ -95,7 +95,7 @@ hr {
                         {{ csrf_field() }}
                         <div class="col-md-12">
                         <div class="form-group{{ $errors->has('name_user') ? ' has-error' : '' }}">
-                            <label  class=" control-label">ชื่อ</label>
+                            <label  class=" control-label">Name</label>
 
 
                                 <input type="text" class="form-control" name="name_user" value="{{ old('name_user') }}">
@@ -109,7 +109,7 @@ hr {
                         </div>
 
                         <div class="form-group{{ $errors->has('ser_name') ? ' has-error' : '' }}">
-                            <label  class=" control-label">นามสกุล</label>
+                            <label  class=" control-label">Surname</label>
 
 
                                 <input type="text" class="form-control" name="ser_name" value="{{ old('ser_name') }}">
@@ -123,7 +123,7 @@ hr {
                         </div>
 
                         <div class="form-group{{ $errors->has('email_user') ? ' has-error' : '' }}">
-                            <label  class=" control-label">Email Addess</label>
+                            <label  class=" control-label">Email</label>
 
 
                                 <input  type="email" class="form-control" name="email_user" value="{{ old('email_user') }}">
@@ -140,7 +140,7 @@ hr {
 
 
                         <div class="form-group{{ $errors->has('phone_user') ? ' has-error' : '' }}">
-                            <label  class=" control-label">mobile phone</label>
+                            <label  class=" control-label">mobile phone No.</label>
 
 
                                 <input type="text" class="form-control" name="phone_user" value="{{ old('phone_user') }}">
@@ -155,7 +155,7 @@ hr {
 
 
                         <div class="form-group{{ $errors->has('position_user') ? ' has-error' : '' }}">
-                            <label  class=" control-label">ตำแหน่ง</label>
+                            <label  class=" control-label">Position</label>
 
 
                                 <input  type="text" class="form-control" name="position_user" value="{{ old('position_user') }}">
@@ -170,7 +170,7 @@ hr {
 
 
                         <div class="form-group{{ $errors->has('company_user') ? ' has-error' : '' }}">
-                            <label  class=" control-label">บริษัท</label>
+                            <label  class=" control-label">Company</label>
 
 
                                 <input  type="text" class="form-control" name="company_user" value="{{ old('company_user') }}">
@@ -186,11 +186,11 @@ hr {
 
 
                         <div class="form-group{{ $errors->has('group_user') ? ' has-error' : '' }}">
-                            <label class=" control-label">กลุ่มลงทะเบียน</label>
+                            <label class=" control-label">Type of participation</label>
 
 
                             <select class="form-control" name="group_user">
-                            <option value="">--เลือกกลุ่มลงทะเบียน--</option>
+                            <option value="">--Please Selete--</option>
                             @foreach($objs as $obj)
                             <option value="{{$obj->id}}">{{$obj->group_name}}</option>
                             @endforeach
@@ -210,7 +210,7 @@ hr {
                         <div class="form-group" style="margin-top:10px;">
                             <div class="col-md-6 col-md-offset-3">
                                 <button type="submit" class="btn btn-perple">
-                                    <i class="fa fa-btn fa-user"></i>ลงทะเบียน
+                                    <i class="fa fa-btn fa-user"></i>REGISTER NOW
                                 </button>
                             </div>
                         </div>
