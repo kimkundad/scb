@@ -54,6 +54,7 @@ class RegisaccountController extends Controller
     {
       $this->validate($request, [
      'name_user' => 'required',
+     'ser_name' => 'required',
      'email_user' => 'required|unique:useraccounts',
      'phone_user' => 'required',
      'position_user' => 'required',
@@ -65,6 +66,7 @@ class RegisaccountController extends Controller
 
       $package = new useraccount();
       $package->name_user = $request['name_user'];
+      $package->ser_name = $request['ser_name'];
       $package->email_user = $request['email_user'];
       $package->phone_user = $request['phone_user'];
       $package->position_user = $request['position_user'];

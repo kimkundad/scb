@@ -106,6 +106,12 @@ class UseraccountController extends Controller
     {
       $obj = useraccount::find($id);
       $obj->delete();
+      $objs = DB::table('qrcords')
+            ->select(
+            'qrcords.*'
+            )
+            ->where('user_id', $id)
+            ->delete();
       return redirect(url('admin/user'))->with('delete','Delete successful');
     }
 }

@@ -34,7 +34,7 @@ repeat-y;width:100%;display:block">
           <tbody>
             <tr>
               <td style="font-size:12px;text-align:right">
-                ชื่อ : {{$data->name_user}}
+                ชื่อ : {{$data->name_user}} {{$data->ser_name}}
               </td>
             </tr>
             <tr>

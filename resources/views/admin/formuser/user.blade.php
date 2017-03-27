@@ -99,7 +99,7 @@
                 @foreach($objs as $u)
                     <tr>
                       <td>{{$u->Qid}}</td>
-                      <td>{{$u->name_user}}</td>
+                      <td>{{$u->name_user}} {{$u->ser_name}}</td>
                       <td>{{$u->email_user}}</td>
                       <td>{{$u->phone_user}}</td>
                       <td>{{$u->group_name}}</td>

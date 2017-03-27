@@ -95,7 +95,7 @@ hr {
                         {{ csrf_field() }}
                         <div class="col-md-12">
                         <div class="form-group{{ $errors->has('name_user') ? ' has-error' : '' }}">
-                            <label  class=" control-label">ชื่อ-นามสกุล</label>
+                            <label  class=" control-label">ชื่อ</label>
 
 
                                 <input type="text" class="form-control" name="name_user" value="{{ old('name_user') }}">
@@ -103,6 +103,20 @@ hr {
                                 @if ($errors->has('name_user'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('name_user') }}</strong>
+                                    </span>
+                                @endif
+
+                        </div>
+
+                        <div class="form-group{{ $errors->has('ser_name') ? ' has-error' : '' }}">
+                            <label  class=" control-label">นามสกุล</label>
+
+
+                                <input type="text" class="form-control" name="ser_name" value="{{ old('ser_name') }}">
+
+                                @if ($errors->has('ser_name'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('ser_name') }}</strong>
                                     </span>
                                 @endif
 
