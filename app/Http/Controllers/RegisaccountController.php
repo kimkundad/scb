@@ -104,8 +104,11 @@ class RegisaccountController extends Controller
            $data_toview['datatime'] = date("d-m-Y H:i:s");
 
 
-           $email_sender   = 'event@dvregister.com';
-           $email_pass     = 'qwer123400';
+          // $email_sender   = 'event@dvregister.com';
+          // $email_pass     = 'qwer123400';
+
+          $email_sender   = 'kim.kundad@gmail.com';
+          $email_pass     = 'qwer123400';
 
        /*    $email_sender   = 'info@acmeinvestor.com';
            $email_pass     = 'Iaminfoacmeinvestor';  */
