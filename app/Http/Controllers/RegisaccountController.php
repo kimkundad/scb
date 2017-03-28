@@ -98,7 +98,7 @@ class RegisaccountController extends Controller
         // send email
            $data_toview = array();
          //  $data_toview['pathToImage'] = "assets/image/email-head.jpg";
-           date_default_timezone_set("Asia/Bangkok");
+
            $data_toview['data'] = $countobj;
            $data_toview['qrcode'] = $qrcode;
            $data_toview['datatime'] = date("d-m-Y H:i:s");
