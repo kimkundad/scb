@@ -101,7 +101,7 @@ class RegisaccountController extends Controller
 
            $data_toview['data'] = $countobj;
            $data_toview['qrcode'] = $qrcode;
-           $data_toview['datatime'] = date("d-m-Y H:i:s");
+
 
 
           // $email_sender   = 'event@dvregister.com';
