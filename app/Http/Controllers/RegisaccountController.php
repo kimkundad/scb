@@ -121,7 +121,7 @@ class RegisaccountController extends Controller
 
                        //https://accounts.google.com/DisplayUnlockCaptcha
                        // Setup your gmail mailer
-                       $transport = \Swift_SmtpTransport::newInstance('smtp.gmail.com', 465, 'ssl');
+                       $transport = \Swift_SmtpTransport::newInstance('smtp.gmail.com', 465, 'SSL');
                        $transport->setUsername($email_sender);
                        $transport->setPassword($email_pass);
 
