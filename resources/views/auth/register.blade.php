@@ -3,6 +3,7 @@
 @section('content')
 <style>
 body{
+  color: #fff;
   background-color: #24292f;
 }
 .form-group {
@@ -10,19 +11,19 @@ body{
 }
 .btn-perple {
     color: #fff;
-    background-color: #9857c7;
-    border-color: #7a2bb3;
+    background-color: #9d3a95;
+    border-color: #852b85;
 }
 .btn-perple:hover {
     color: #fff;
-    background-color: #b787da;
-    border-color: #7a2bb3;
+    background-color: #852b85;
+    border-color: #852b85;
 }
 .panel-body {
     padding: 10px 25px;
 }
 .panel-default>.panel-heading {
-    background-image: url({{url('assets/image/17554834_1772523896094679_941988071_n.png')}});
+    background-image: url({{url('assets/image/DVAwebregist_head.jpg')}});
 
 }
 .panel-heading {
@@ -74,40 +75,105 @@ hr {
     background-color: #080808;
     border-color: #484445;
 }
+.panel-default {
+    border: none;
+}
+.panel-body {
+    background-color: #545559;
+}
+@media (min-width: 1200px){
+.container {
+    width: 970px;
+}
+}
+.form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #ccc;
+    background-color: #24292f;
+    background-image: none;
+    border: 1px solid #000;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+select,
+option:focus,
+.uneditable-input:focus {
+  border-color: rgba(154, 47, 146, 0.8);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(154, 47, 146, 0.6);
+  outline: 0 none;
+}
+select:active, select:hover ,  select:focus, option
+ {
+  border-color: rgba(154, 47, 146, 0.8);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(154, 47, 146, 0.6);
+  outline: 0 none;
+}
+.form-horizontal .form-group {
+    margin-right: 5px;
+    margin-left:5px;
+}
+label {
+    font-size: 17px;
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
 </style>
 <div class="container" style="margin-top:30px;">
     <div class="row">
 
 
-        <div class="col-md-4 col-md-offset-4">
+        <div class="col-md-12">
             <div class="panel panel-default" >
-              <div class="panel-heading">
-
-                <div class="row-fluid user-row">
-
-                <img src="{{url('assets/image/17554834_1772523896094679_941988071_n.png')}}" class="img-responsive imgpicture">
-
-                </div>
-              </div>
+              <img src="{{url('assets/image/DVAwebregist_head.jpg')}}" class="img-responsive">
                 <div class="panel-body">
 
                     <form class="form-horizontal" role="form" name="teacher" method="POST" action="{{ url('/useraccount_register') }}">
                         {{ csrf_field() }}
-                        <div class="col-md-12">
-                        <div class="form-group{{ $errors->has('name_user') ? ' has-error' : '' }}">
-                            <label  class=" control-label">Name</label>
+                        <div class="row">
+
+                          <div class="col-md-6">
+                            <div class="form-group{{ $errors->has('name_user') ? ' has-error' : '' }}">
+                                <label  class=" control-label">Name</label>
 
 
-                                <input type="text" class="form-control" name="name_user" value="{{ old('name_user') }}">
+                                    <input type="text" class="form-control" name="name_user" value="{{ old('name_user') }}">
 
-                                @if ($errors->has('name_user'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('name_user') }}</strong>
-                                    </span>
-                                @endif
+                                    @if ($errors->has('name_user'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('name_user') }}</strong>
+                                        </span>
+                                    @endif
 
-                        </div>
+                            </div>
+                          </div>
 
+                          <div class="col-md-6">
                         <div class="form-group{{ $errors->has('ser_name') ? ' has-error' : '' }}">
                             <label  class=" control-label">Surname</label>
 
@@ -121,39 +187,11 @@ hr {
                                 @endif
 
                         </div>
-
-                        <div class="form-group{{ $errors->has('email_user') ? ' has-error' : '' }}">
-                            <label  class=" control-label">Email</label>
-
-
-                                <input  type="email" class="form-control" name="email_user" value="{{ old('email_user') }}">
-
-                                @if ($errors->has('email_user'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email_user') }}</strong>
-                                    </span>
-                                @endif
-
                         </div>
 
 
 
-
-                        <div class="form-group{{ $errors->has('phone_user') ? ' has-error' : '' }}">
-                            <label  class=" control-label">mobile phone No.</label>
-
-
-                                <input type="text" class="form-control" name="phone_user" value="{{ old('phone_user') }}">
-
-                                @if ($errors->has('phone_user'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('phone_user') }}</strong>
-                                    </span>
-                                @endif
-
-                        </div>
-
-
+                        <div class="col-md-6">
                         <div class="form-group{{ $errors->has('position_user') ? ' has-error' : '' }}">
                             <label  class=" control-label">Position</label>
 
@@ -167,8 +205,9 @@ hr {
                                 @endif
 
                         </div>
+                        </div>
 
-
+                        <div class="col-md-6">
                         <div class="form-group{{ $errors->has('company_user') ? ' has-error' : '' }}">
                             <label  class=" control-label">Company</label>
 
@@ -182,9 +221,27 @@ hr {
                                 @endif
 
                         </div>
+                        </div>
+
+                        <div class="col-md-6">
+                        <div class="form-group{{ $errors->has('email_user') ? ' has-error' : '' }}">
+                            <label  class=" control-label">Email</label>
+
+
+                                <input  type="email" class="form-control" name="email_user" value="{{ old('email_user') }}">
+
+                                @if ($errors->has('email_user'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('email_user') }}</strong>
+                                    </span>
+                                @endif
+
+                        </div>
+                        </div>
 
 
 
+                        <div class="col-md-6">
                         <div class="form-group{{ $errors->has('group_user') ? ' has-error' : '' }}">
                             <label class=" control-label">Type of participation</label>
 
@@ -203,21 +260,56 @@ hr {
                                 @endif
 
                         </div>
+                        </div>
 
 
 
 
-                        <div class="form-group" style="margin-top:10px;">
-                            <div class="col-md-6 col-md-offset-3">
-                                <button type="submit" class="btn btn-perple">
+
+
+
+
+                        <div class="col-md-6">
+                        <div class="form-group{{ $errors->has('phone_user') ? ' has-error' : '' }}">
+                            <label  class=" control-label">mobile phone No.</label>
+
+
+                                <input type="text" class="form-control" name="phone_user" value="{{ old('phone_user') }}">
+
+                                @if ($errors->has('phone_user'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('phone_user') }}</strong>
+                                    </span>
+                                @endif
+
+                        </div>
+                        </div>
+
+
+
+                        <div class="col-md-6">
+                        <div class="form-group" style="margin-top:30px;">
+
+                                <button type="submit" class="btn btn-perple btn-block">
                                     <i class="fa fa-btn fa-user"></i>REGISTER NOW
                                 </button>
-                            </div>
+
                         </div>
+                        </div>
+
+
+
                         </div>
                     </form>
                 </div>
             </div>
+            <p class="text-center">Full agenda at www.dv.co.th</p>
+            <br><br>
+            <img src="{{url('assets/image/digital_venture_logo2.png')}}" class="img-responsive" style="bottom: 20px;
+    /* top: 120px; */
+    right: 0px;
+    height: 55px;
+    position: absolute;">
         </div>
 
 

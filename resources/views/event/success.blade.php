@@ -150,7 +150,18 @@ label {
 
         <div class="col-md-12">
             <div class="panel panel-default" >
-              <img src="{{url('assets/image/DVAwebregist_success.jpg')}}" class="img-responsive">
+              <img src="{{url('assets/image/DVAwebregist_head_success.jpg')}}" class="img-responsive">
+
+              <div class="panel-body">
+                <div class="col-md-10 col-md-offset-1" style="    margin-bottom: 150px;">
+
+                    <img src="{{url('assets/image/DVAwebregist_head_success_golo.jpg')}}" class="img-responsive" style="margin: 0 auto;">
+
+
+                </div>
+
+              </div>
+
 
             </div>
             <p class="text-center">Full agenda at www.dv.co.th</p>

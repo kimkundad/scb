@@ -16,8 +16,8 @@ Route::get('/', function () {
 });
 
 
-Route::get('/thx', function () {
-    return view('home');
+Route::get('/event_success', function () {
+    return view('event.success');
 });
 
 Route::get('/course', function () {

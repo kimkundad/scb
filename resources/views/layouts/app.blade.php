@@ -31,18 +31,18 @@
     </style>
 </head>
 <body id="app-layout">
-    <nav class="navbar navbar-default navbar-static-top">
+  <!--  <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
 
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                <!-- Left Side Of Navbar -->
+
 
 
 
             </div>
         </div>
-    </nav>
+    </nav> -->
 
     @yield('content')
 

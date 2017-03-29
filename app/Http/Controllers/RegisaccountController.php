@@ -107,8 +107,8 @@ class RegisaccountController extends Controller
           // $email_sender   = 'event@dvregister.com';
           // $email_pass     = 'qwer123400';
 
-          $email_sender   = 'event@dvregister.com';
-          $email_pass     = 'qwer123400';
+          $email_sender   = 'ighostza@gmail.com';
+          $email_pass     = 'qwer12340';
 
        /*    $email_sender   = 'info@acmeinvestor.com';
            $email_pass     = 'Iaminfoacmeinvestor';  */
@@ -157,7 +157,7 @@ class RegisaccountController extends Controller
            // send email
 
 
-      return redirect(url('/thx'))->with('success','เพิ่มบัญชีผู้ใช้งานเสร็จเรียบร้อยแล้ว');
+      return redirect(url('/event_success'))->with('success','เพิ่มบัญชีผู้ใช้งานเสร็จเรียบร้อยแล้ว');
 
     }
 
