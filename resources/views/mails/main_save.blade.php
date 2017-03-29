@@ -95,23 +95,66 @@ class RegisaccountController extends Controller
 
 
 
-         foreach ($countobj as $user) {
-      //  echo $obj->email;
-      //dd($user->email);
-            //  $email_sender = 'info@acmeinvestor.com';
+        // send email
+           $data_toview = array();
+         //  $data_toview['pathToImage'] = "assets/image/email-head.jpg";
+
+           $data_toview['data'] = $countobj;
+           $data_toview['qrcode'] = $qrcode;
 
 
 
-      $data_toview['qrcode'] = $qrcode;
+          // $email_sender   = 'event@dvregister.com';
+          // $email_pass     = 'qwer123400';
 
-      Mail::send('mails.index', $data_toview, function ($m) use ($user){
-          $m->from('admin@ideavivat.com', 'DVAb0 Demo Day Confirmation Email.');
+          $email_sender   = 'ighostzaa@gmail.com';
+          $email_pass     = 'qwer12340';
 
-          $m->to($user->email_user, 'DVAb0 Demo Day Confirmation Email.')->subject('Confirmation for DVAb0 Demo Day : WHERE THE NEXT BIG THINGS HAPPEN');
-      });
+       /*    $email_sender   = 'info@acmeinvestor.com';
+           $email_pass     = 'Iaminfoacmeinvestor';  */
+           $email_to       =  $request['email_user'];
+           //echo $admins[$idx]['email'];
+           // Backup your default mailer
+           $backup = \Mail::getSwiftMailer();
+
+           try{
+
+                       //https://accounts.google.com/DisplayUnlockCaptcha
+                       // Setup your gmail mailer
+                       $transport = \Swift_SmtpTransport::newInstance('smtp.gmail.com', 587, 'tls');
+                       $transport->setUsername($email_sender);
+                       $transport->setPassword($email_pass);
+
+                       // Any other mailer configuration stuff needed...
+                       $gmail = new Swift_Mailer($transport);
+
+                       // Set the mailer as gmail
+                       \Mail::setSwiftMailer($gmail);
+
+                       $data['emailto'] = $email_sender;
+                       $data['sender'] = $email_to;
+                       //Sender dan Reply harus sama
+
+                       Mail::send('mails.index', $data_toview, function($message) use ($data)
+                       {
+                           $message->from($data['sender'], 'Digital Ventures');
+                           $message->to($data['sender'])
+                           ->replyTo($data['sender'], 'DVAb0 Demo Day Confirmation Email.')
+                           ->subject('Confirmation for DVAb0 Demo Day : WHERE THE NEXT BIG THINGS HAPPEN');
+
+                           //echo 'Confirmation email after registration is completed.';
+                       });
+
+           }catch(\Swift_TransportException $e){
+               $response = $e->getMessage() ;
+               echo $response;
+
+           }
 
 
-      }
+           // Restore your original mailer
+           Mail::setSwiftMailer($backup);
+           // send email
 
 
       return redirect(url('/event_success'))->with('success','เพิ่มบัญชีผู้ใช้งานเสร็จเรียบร้อยแล้ว');
