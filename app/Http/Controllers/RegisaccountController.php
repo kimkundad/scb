@@ -105,7 +105,7 @@ class RegisaccountController extends Controller
       $data_toview['qrcode'] = $qrcode;
 
       Mail::send('mails.index', $data_toview, function ($m) use ($user){
-          $m->from('admin@ideavivat.com', 'DVAb0 Demo Day Confirmation Email.');
+          $m->from('event@dvregister.com', 'DVAb0 Demo Day Confirmation Email.');
 
           $m->to($user->email_user, 'DVAb0 Demo Day Confirmation Email.')->subject('Confirmation for DVAb0 Demo Day : WHERE THE NEXT BIG THINGS HAPPEN');
       });
