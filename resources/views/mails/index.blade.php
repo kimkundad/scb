@@ -1,6 +1,3 @@
-
-<p><b>Subject:</b> Confirmation for DVAb0 Demo Day : WHERE THE NEXT BIG THINGS HAPPEN<p>
-
 <p>Thank you for your confirmation to join us! Here are information you might want to know about the event.</p>
 
 <h3>EVENT BANNER</h3>
