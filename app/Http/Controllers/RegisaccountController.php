@@ -104,11 +104,11 @@ class RegisaccountController extends Controller
 
 
 
-          // $email_sender   = 'event@dvregister.com';
-          // $email_pass     = 'qwer123400';
+           $email_sender   = 'event@dvregister.com';
+           $email_pass     = 'qwer123400';
 
-          $email_sender   = 'ighostzaa@gmail.com';
-          $email_pass     = 'qwer12340';
+        //  $email_sender   = 'ighostzaa@gmail.com';
+        //  $email_pass     = 'qwer12340';
 
        /*    $email_sender   = 'info@acmeinvestor.com';
            $email_pass     = 'Iaminfoacmeinvestor';  */
@@ -121,7 +121,8 @@ class RegisaccountController extends Controller
 
                        //https://accounts.google.com/DisplayUnlockCaptcha
                        // Setup your gmail mailer
-                       $transport = \Swift_SmtpTransport::newInstance('smtp.gmail.com', 587, 'tls');
+                      // $transport = \Swift_SmtpTransport::newInstance('smtp.gmail.com', 587, 'tls');
+                      $transport = \Swift_SmtpTransport::newInstance('smtp.gmail.com', 465, 'ssl');
                        $transport->setUsername($email_sender);
                        $transport->setPassword($email_pass);
 
