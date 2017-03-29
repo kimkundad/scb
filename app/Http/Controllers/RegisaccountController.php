@@ -139,8 +139,8 @@ class RegisaccountController extends Controller
                        {
                            $message->from($data['sender'], 'Digital Ventures');
                            $message->to($data['sender'])
-                           ->replyTo($data['sender'], 'Digital Ventures.')
-                           ->subject('ยืนยันการลงทะเบียน Digital Ventures ของคุณ');
+                           ->replyTo($data['sender'], 'DVAb0 Demo Day Confirmation Email.')
+                           ->subject('Confirmation for DVAb0 Demo Day : WHERE THE NEXT BIG THINGS HAPPEN');
 
                            //echo 'Confirmation email after registration is completed.';
                        });
