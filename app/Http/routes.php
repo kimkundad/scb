@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 
 Route::get('/event_success', function () {
@@ -35,7 +33,7 @@ Route::get('/live', function () {
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
-
+Route::get('/', 'RegisaccountController@register');
 Route::get('/register', 'RegisaccountController@register');
 Route::post('/useraccount_register', 'RegisaccountController@store');
 
