@@ -91,7 +91,7 @@ class RegisaccountController extends Controller
             'useraccounts.*'
             )
          ->where('useraccounts.id', $the_id)
-         ->first();
+         ->get();
 
 
 
