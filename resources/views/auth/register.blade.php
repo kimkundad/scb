@@ -307,7 +307,11 @@ label {
                 </div>
             </div>
             <div><img src="http://www.dvregister.com/assets/image/digital_venture_logo2.png" class="img-responsive" style="height:80px; margin:0 auto"></div>
-            <p class="text-center"><a href="www.dv.co.th/DVA/DemoDay" target="_blank">Full agenda at www.dv.co.th</a></p>
+            <br>
+            <p class="text-center"><a href="www.dv.co.th/DVA/DemoDay" target="_blank" style="
+    text-decoration: none;
+    color: #fff;
+">Full agenda at www.dv.co.th</a></p>
             <br><br>
 
         </div>
