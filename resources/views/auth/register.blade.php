@@ -154,9 +154,9 @@ label {
         <div class="col-md-12">
             <div class="panel panel-default" >
               <img src="{{url('assets/image/DVAwebregist_head.jpg')}}" class="img-responsive">
-                <div class="panel-body">
+                <div class="panel-body" style="margin-bottom: 40px;">
 
-                    <form class="form-horizontal" role="form" name="teacher" method="POST" action="{{ url('/useraccount_register') }}">
+                    <form class="form-horizontal" role="form" name="teacher" method="POST" action="{{ url('/useraccount_register') }}" style="padding-bottom: 40px;">
                         {{ csrf_field() }}
                         <div class="row">
 
