@@ -246,7 +246,7 @@ label {
 
                         <div class="col-md-6">
                         <div class="form-group{{ $errors->has('group_user') ? ' has-error' : '' }}">
-                            <label class=" control-label">Type of participation</label>
+                            <label class=" control-label">Type of Participants</label>
 
 
                             <select class="form-control" name="group_user">
