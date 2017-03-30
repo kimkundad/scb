@@ -143,6 +143,9 @@ label {
     margin-bottom: 5px;
     font-weight: 700;
 }
+.has-error .checkbox, .has-error .checkbox-inline, .has-error .control-label, .has-error .help-block, .has-error .radio, .has-error .radio-inline, .has-error.checkbox label, .has-error.checkbox-inline label, .has-error.radio label, .has-error.radio-inline label {
+    color: #ff0500;
+}
 </style>
 <div class="container" style="margin-top:30px;">
     <div class="row">
