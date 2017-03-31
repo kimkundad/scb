@@ -56,7 +56,7 @@ class RegisaccountController extends Controller
      'name_user' => 'required',
      'ser_name' => 'required',
      'email_user' => 'required|unique:useraccounts',
-     'phone_user' => 'required',
+     'phone_user' => 'required|unique:useraccounts',
      'position_user' => 'required',
      'company_user' => 'required',
      'group_user' => 'required'
