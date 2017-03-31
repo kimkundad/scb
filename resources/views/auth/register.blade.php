@@ -274,7 +274,7 @@ label {
 
                         <div class="col-md-6">
                         <div class="form-group{{ $errors->has('phone_user') ? ' has-error' : '' }}">
-                            <label  class=" control-label">Mobile Phone No..</label>
+                            <label  class=" control-label">Mobile Phone No.</label>
 
 
                                 <input type="text" class="form-control" name="phone_user" value="{{ old('phone_user') }}">
