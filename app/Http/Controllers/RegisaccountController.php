@@ -69,7 +69,7 @@ class RegisaccountController extends Controller
           'groupts.*'
           )
         ->where('groupts.id', $group_user)
-        ->get();
+        ->first();
 
       $count_user_get = DB::table('useraccounts')
           ->select(
