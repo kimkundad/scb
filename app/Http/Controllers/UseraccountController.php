@@ -81,7 +81,15 @@ class UseraccountController extends Controller
      */
     public function edit($id)
     {
-        //
+
+      $group = Groupt::all();
+      $data['group'] = $group;
+      $objs = useraccount::find($id);
+    $data['objs'] = $objs;
+    $data['header'] = 'แก้ไขข้อมูลผู้ลงทะเบียน';
+    $data['url'] = url('admin/user/'.$id);
+    $data['method'] = "put";
+    return view('admin.formuser.edit',$data);
     }
 
     /**

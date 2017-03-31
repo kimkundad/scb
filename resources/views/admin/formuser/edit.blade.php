@@ -35,59 +35,6 @@
 							<div class="row">
 							<div class="col-md-4 col-lg-3">
 
-
-                <section class="panel">
-								<div class="panel-body">
-									<div class="thumb-info mb-md">
-                    @if($objs->provider == 'email' && $objs->avatar != "NULL")
-										<img src="{{url('assets/images/avatar/'.$objs->avatar)}}" class="rounded img-responsive" alt="{{$objs->name}}">
-										@elseif ($objs->provider == 'facebook')
-										<img src="http://{{$objs->avatar}}" class="rounded img-responsive" alt="{{$objs->name}}">
-                    @else
-                    <img src="{{url('assets/images/avatar/blank_avatar_240x240.gif')}}" class="rounded img-responsive" alt="{{$objs->name}}">
-                    @endif
-										<div class="thumb-info-title" style="background: rgba(36, 27, 28, 0.0);">
-
-											<span class="thumb-info-type">{{ $objs->position }}</span>
-										</div>
-									</div>
-
-									<div class="widget-toggle-expand mb-md">
-										<div class="widget-header">
-											<h6>Profile Completion</h6>
-											<div class="widget-toggle">+</div>
-										</div>
-										<div class="widget-content-collapsed">
-											<div class="progress progress-xs light">
-												<div class="progress-bar" role="progressbar" aria-valuenow="{{$score}}" aria-valuemin="0" aria-valuemax="100" style="width: {{$score}}%;">
-													{{$score}}%
-												</div>
-											</div>
-										</div>
-                    <style>
-                    ul.simple-todo-list li {
-                        position: relative;
-                        padding: 0px;
-                    }
-                    </style>
-										<div class="widget-content-expanded">
-											<ul class="simple-todo-list">
-												<li><i class="fa fa-user"></i> {{ $objs->first_name }} {{ $objs->last_name }}</li>
-                        <li><i class="fa fa-envelope-o "></i> {{ $objs->email }} </li>
-												<li><i class="fa fa-phone"></i> {{ $objs->phone }} </li>
-                        <li><i class="fa fa-gavel "></i> {{ $objs->position }} </li>
-
-											</ul>
-										</div>
-									</div>
-
-
-
-
-
-								</div>
-							</section>
-
 							</div>
 
 
@@ -102,7 +49,7 @@
 								<ul class="nav nav-tabs tabs-primary">
 
 									<li class="active">
-										<a href="#edit" data-toggle="tab">Edit</a>
+										<a href="#edit" data-toggle="tab">แก้ไขข้อมูล</a>
 									</li>
 								</ul>
 								<div class="tab-content">
@@ -113,7 +60,7 @@
                       {{ method_field($method) }}
 											{{ csrf_field() }}
 
-											<h4 class="mb-xlg">Personal Information</h4>
+											<h4 class="mb-xlg">{{$header}}</h4>
                       @if (count($errors) > 0)
                       <br>
                           <div class="alert alert-danger">
@@ -125,68 +72,48 @@
                           </div>
                       @endif
 											<fieldset>
-                        <div class="form-group">
-													<label class="col-md-3 control-label" for="profileFirstName">Username</label>
-													<div class="col-md-8">
-														<input type="text" class="form-control" name="name" value="{{ $objs->name }}" id="profileFirstName">
-													</div>
-												</div>
+
 												<div class="form-group">
 													<label class="col-md-3 control-label" for="profileFirstName">First Name</label>
 													<div class="col-md-8">
-														<input type="text" class="form-control" name="first_name" value="{{ $objs->first_name }}" id="profileFirstName">
+														<input type="text" class="form-control" name="first_name" value="{{ $objs->name_user }}" id="profileFirstName">
 													</div>
 												</div>
 												<div class="form-group">
 													<label class="col-md-3 control-label" for="profileLastName">Last Name</label>
 													<div class="col-md-8">
-														<input type="text" class="form-control" name="last_name" value="{{ $objs->last_name }}" id="profileLastName">
+														<input type="text" class="form-control" name="last_name" value="{{ $objs->ser_name }}" id="profileLastName">
 													</div>
 												</div>
                         <div class="form-group">
 													<label class="col-md-3 control-label" for="profileCompany">Email</label>
 													<div class="col-md-8">
-														<input type="text" class="form-control" name="email" value="{{ $objs->email }}" id="profileCompany" readonly>
+														<input type="text" class="form-control" name="email" value="{{ $objs->email_user }}" id="profileCompany" readonly>
 													</div>
 												</div>
 												<div class="form-group">
 													<label class="col-md-3 control-label" for="profileCompany">Phone</label>
 													<div class="col-md-8">
-														<input type="number" class="form-control" name="phone" value="{{ $objs->phone }}" id="profileCompany" >
+														<input type="number" class="form-control" name="phone" value="{{ $objs->phone_user }}" id="profileCompany" >
 													</div>
 												</div>
+
                         <div class="form-group">
-													<label class="col-md-3 control-label" for="profileAddress">Position</label>
+													<label class="col-md-3 control-label" for="profileAddress">Type of Participants</label>
 													<div class="col-md-8">
-														<select name="position" class="form-control mb-md" required>
-
-                      <option value="{{ $objs->position }}">{{ $objs->position }}</option>
-											<option value="teacher">Teacher</option>
-											<option value="teacher">Student</option>
-                    	<option value="admin">Admin</option>
-                    </select>
+														<select class="form-control" name="group_user">
+                            <option value="">--Please select--</option>
+                            @foreach($group as $groups)
+                            <option value="{{$groups->id}}" @if( $objs->group_user == $groups->id)
+                                                                  selected='selected'
+                                                                  @endif >{{$groups->group_name}}</option>
+                            @endforeach
+                            </select>
 													</div>
 												</div>
 
-                        <div class="form-group">
-                          <label class="col-md-3 control-label" for="exampleInputEmail1">รูป Avatar</label>
-                          <div class="col-md-8">
-                          <div class="fileupload fileupload-new" data-provides="fileupload">
-        														<div class="input-append">
-        															<div class="uneditable-input">
-        																<i class="fa fa-file fileupload-exists"></i>
-        																<span class="fileupload-preview"></span>
-        															</div>
-        															<span class="btn btn-default btn-file">
-        																<span class="fileupload-exists">Change</span>
-        																<span class="fileupload-new">Select file</span>
-        																<input type="file" name="image">
-        															</span>
-        															<a href="#" class="btn btn-default fileupload-exists" data-dismiss="fileupload">Remove</a>
-        														</div>
-        													</div>
-                                  </div>
-                        </div>
+
+
 												<div class="form-group">
 													<label class="col-md-3 control-label" for="profileAddress">Address</label>
 													<div class="col-md-8">
@@ -196,7 +123,7 @@
 
 											</fieldset>
 
-										
+
 
 
 

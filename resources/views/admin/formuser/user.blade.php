@@ -110,6 +110,14 @@
 
                       <td>
 
+                        @if($u->status_user == 0)
+                          <a type="button" style="float:left; margin-right:3px; margin-top:5px;" class="btn btn-danger btn-xs"><i class="fa fa-frown-o "></i></a>
+                          @elseif($u->status_user == 1)
+                           <a type="button" style="float:left; margin-right:3px; margin-top:5px;" class="btn btn-success btn-xs"><i class="fa fa-star"></i></a>
+                             @else
+                             <a type="button" style="float:left; margin-right:3px; margin-top:5px;" class="btn btn-warning btn-xs"><i class="fa fa-meh-o"></i></a>
+                             @endif
+
                         <a style="float:left; margin-right:8px; " class="btn btn-success btn-xs " target="_blank"
                              download="{{$u->qrcode}}.jpg" href="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(300)->generate($u->Qid)) !!}"
                              role="button"><i class="fa fa-download"></i> </a>
