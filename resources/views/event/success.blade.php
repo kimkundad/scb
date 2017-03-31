@@ -169,7 +169,7 @@ label {
             <p class="text-center"><a href="http://www.dv.co.th/DVA/DemoDay/" target="_blank" style="
     text-decoration: none;
     color: #fff;
-">Full agenda at www.dv.co.th</a></p>
+">Full agenda at www.dv.co.th/DVA/DemoDay</a></p>
         </div>
 
 
