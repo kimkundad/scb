@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests;
 use App\useraccount;
+use App\Groupt;
+use App\qrcord;
 use SimpleSoftwareIO\QrCode\BaconQrCodeGenerator;
 
 class UseraccountController extends Controller
