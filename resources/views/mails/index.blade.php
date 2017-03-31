@@ -1,5 +1,5 @@
 <img src="{{url('assets/image/banner_key.jpg')}}" class="emailImage" border="0" height="290" />
-<p>Thank you for your confirmation to join us! Here are information you might want to know about the event.</p>
+<p>Thank you for your confirmation to join us! Here is information you might want to know about the event.</p>
 
 <p><b>DVAb0 Demo Day : WHERE THE NEXT BIG THINGS HAPPEN<br>
 Tuesday, April 25, 2017 during 14.30 – 17.00 hrs. at GMM Live House, 8th floor,  CentralWorld</b></p>
