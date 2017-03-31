@@ -11,6 +11,6 @@ Tuesday, April 25, 2017 during 14.30 – 17.00 hrs. at GMM Live House, 8th floor
 
 <p>Remark: for one time use only.</p>
 
-<p>See full program <a href="www.dv.co.th/DVA/DemoDay">here</a> <br>
+<p>See full program <a href="www.dv.co.th/DVA/DemoDay">here</a> <br><br>
 See you there!<br>
 Digital Ventures Accelerator team</p>
