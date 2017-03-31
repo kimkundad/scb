@@ -66,14 +66,14 @@ class RegisaccountController extends Controller
 
       $getlimit = DB::table('groupts')
         ->select(
-          'groupts.*',
+          'groupts.*'
           )
         ->where('groupts.id', $group_user)
         ->get();
 
       $count_user_get = DB::table('useraccounts')
           ->select(
-            'useraccounts.*',
+            'useraccounts.*'
             )
           ->where('useraccounts.group_user', $group_user)
           ->count();
