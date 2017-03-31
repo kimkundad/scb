@@ -18,6 +18,10 @@ Route::get('/event_success', function () {
     return view('event.success');
 });
 
+Route::get('/event_full', function () {
+    return view('event.full');
+});
+
 Route::get('/course', function () {
     return view('course.index');
 });

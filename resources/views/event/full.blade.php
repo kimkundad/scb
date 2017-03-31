@@ -155,7 +155,7 @@ label {
               <div class="panel-body">
                 <div class="col-md-10 col-md-offset-1" style="    margin-bottom: 150px;">
 
-                    <img src="{{url('assets/image/DVAwebregist_head_success_golo.jpg')}}" class="img-responsive" style="margin: 0 auto;">
+                    <img src="{{url('assets/image/DVAwebregist_280317-04.png')}}" class="img-responsive" style="margin: 0 auto;">
 
 
                 </div>

@@ -62,59 +62,129 @@ class RegisaccountController extends Controller
      'group_user' => 'required'
       ]);
 
+      $group_user = $request->get('group_user');
 
+      $getlimit = DB::table('groupts')
+        ->select(
+          'groupts.*',
+          )
+        ->where('groupts.id', $group_user)
+        ->get();
 
-      $package = new useraccount();
-      $package->name_user = $request['name_user'];
-      $package->ser_name = $request['ser_name'];
-      $package->email_user = $request['email_user'];
-      $package->phone_user = $request['phone_user'];
-      $package->position_user = $request['position_user'];
-      $package->company_user = $request['company_user'];
-      $package->group_user = $request['group_user'];
-      $package->save();
-
-
-      $the_id = $package->id;
-
-        $qrcode = "DV-00".$the_id;
-
-        $package = new qrcord();
-        $package->user_id = $the_id;
-        $package->qrcode = $qrcode;
-        $package->save();
-
-
-
-        $countobj = DB::table('useraccounts')
-         ->select(
-            'useraccounts.*'
+      $count_user_get = DB::table('useraccounts')
+          ->select(
+            'useraccounts.*',
             )
-         ->where('useraccounts.id', $the_id)
-         ->get();
+          ->where('useraccounts.group_user', $group_user)
+          ->count();
+
+      $limit_groups = $getlimit->limit_group;
+
+      if($count_user_get <= $limit_groups){
 
 
 
-         foreach ($countobj as $user) {
-      //  echo $obj->email;
-      //dd($user->email);
-            //  $email_sender = 'info@acmeinvestor.com';
+        $package = new useraccount();
+        $package->name_user = $request['name_user'];
+        $package->ser_name = $request['ser_name'];
+        $package->email_user = $request['email_user'];
+        $package->phone_user = $request['phone_user'];
+        $package->position_user = $request['position_user'];
+        $package->company_user = $request['company_user'];
+        $package->group_user = $request['group_user'];
+        $package->status_user = 1;
+        $package->save();
+        $the_id = $package->id;
+
+          $qrcode = "DV-00".$the_id;
+          $package = new qrcord();
+          $package->user_id = $the_id;
+          $package->qrcode = $qrcode;
+          $package->save();
+
+          $countobj = DB::table('useraccounts')
+           ->select(
+              'useraccounts.*'
+              )
+           ->where('useraccounts.id', $the_id)
+           ->get();
+
+           foreach ($countobj as $user) {
+
+        $data_toview['qrcode'] = $qrcode;
+
+        Mail::send('mails.index', $data_toview, function ($m) use ($user){
+            $m->from('event@dvregister.com', 'DVAb0 Demo Day Confirmation Email.');
+
+            $m->to($user->email_user, 'DVAb0 Demo Day Confirmation Email.')->subject('Confirmation for DVAb0 Demo Day : WHERE THE NEXT BIG THINGS HAPPEN');
+        });
+
+        }
+        return redirect(url('/event_success'))->with('success','เพิ่มบัญชีผู้ใช้งานเสร็จเรียบร้อยแล้ว');
 
 
 
-      $data_toview['qrcode'] = $qrcode;
 
-      Mail::send('mails.index', $data_toview, function ($m) use ($user){
-          $m->from('event@dvregister.com', 'DVAb0 Demo Day Confirmation Email.');
+      }else{
 
-          $m->to($user->email_user, 'DVAb0 Demo Day Confirmation Email.')->subject('Confirmation for DVAb0 Demo Day : WHERE THE NEXT BIG THINGS HAPPEN');
-      });
+
+
+        $package = new useraccount();
+        $package->name_user = $request['name_user'];
+        $package->ser_name = $request['ser_name'];
+        $package->email_user = $request['email_user'];
+        $package->phone_user = $request['phone_user'];
+        $package->position_user = $request['position_user'];
+        $package->company_user = $request['company_user'];
+        $package->group_user = $request['group_user'];
+        $package->save();
+        $the_id = $package->id;
+
+          $qrcode = "DV-00".$the_id;
+          $package = new qrcord();
+          $package->user_id = $the_id;
+          $package->qrcode = $qrcode;
+          $package->save();
+
+      /*    $countobj = DB::table('useraccounts')
+           ->select(
+              'useraccounts.*'
+              )
+           ->where('useraccounts.id', $the_id)
+           ->get(); */
+
+        /*   foreach ($countobj as $user) {
+
+        $data_toview['qrcode'] = $qrcode;
+
+        Mail::send('mails.index', $data_toview, function ($m) use ($user){
+            $m->from('event@dvregister.com', 'DVAb0 Demo Day Confirmation Email.');
+
+            $m->to($user->email_user, 'DVAb0 Demo Day Confirmation Email.')->subject('Confirmation for DVAb0 Demo Day : WHERE THE NEXT BIG THINGS HAPPEN');
+        });
+
+      } */
+        return redirect(url('/event_full'));
+
 
 
       }
 
 
-      return redirect(url('/event_success'))->with('success','เพิ่มบัญชีผู้ใช้งานเสร็จเรียบร้อยแล้ว');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     }
 
