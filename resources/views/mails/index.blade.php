@@ -5,7 +5,7 @@
 Tuesday, April 25, 2017 during 14.30 – 17.00 hrs. at GMM Live House, 8th floor,  CentralWorld</b></p>
 
 <p>Registration: Show your QR Code given below for registration at the event. Make sure to get there before 14.30 hrs.</p>
-<p>Dress Code: Investor Loook or Startup Look...or whatever you like.</p>
+<p>Dress Code: Investor Look or Startup Look . . . or whatever you like.</p>
 
 <img src="{!!$message->embedData(QrCode::format('png')->size(300)->generate($qrcode), 'QrCode.png', 'image/png')!!}"><br>
 {{$qrcode}}
