@@ -164,13 +164,12 @@ label {
 
 
             </div>
-            <p class="text-center">Full agenda at www.dv.co.th</p>
-            <br><br>
-            <img src="{{url('assets/image/digital_venture_logo2.png')}}" class="img-responsive" style="bottom: 20px;
-    /* top: 120px; */
-    right: 0px;
-    height: 55px;
-    position: absolute;">
+            <div><a href="http://www.dv.co.th/DVA/DemoDay/"><img src="http://www.dvregister.com/assets/image/digital_venture_logo2.png" class="img-responsive" style="height:80px; margin:0 auto"></a></div>
+            <br>
+            <p class="text-center"><a href="http://www.dv.co.th/DVA/DemoDay/" target="_blank" style="
+    text-decoration: none;
+    color: #fff;
+">Full agenda at www.dv.co.th</a></p>
         </div>
 
 
