@@ -32,10 +32,12 @@ class DashboardController extends Controller
                   ->select(
                   'groupts.*'
                   )
-                  ->where('limit_group', 12)
+                  ->where('groupts.id', 12)
                   ->first();
-        $Attendee_lim = $Attendee_lim2->limit_group - $Attendee;
-        dd($Attendee_lim);
+
+
+        //$Attendee_lim = $Attendee_lim2->limit_group - $Attendee;
+        dd($Attendee_lim2);
         $data['Attendee'] = $Attendee;
         $data['Attendee_lim'] = $Attendee_lim;
 
