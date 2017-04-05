@@ -32,7 +32,7 @@
 <!-- Analytics to Track Preview Website -->
 
 <!-- Examples -->
-
+<script src="{{URL::asset('assets/javascripts/dropzone.js')}}"></script>
 <script src="{{asset('/assets/javascripts/ui-elements/examples.modals.js')}}"></script>
  <script src="{{asset('/assets/javascripts/tables/examples.datatables.default.js')}}"></script>
  <script src="{{asset('/assets/javascripts/pages/examples.mediagallery.js')}}"></script>

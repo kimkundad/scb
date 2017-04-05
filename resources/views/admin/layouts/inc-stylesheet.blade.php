@@ -28,7 +28,7 @@
 
         <link rel="stylesheet" href="{{asset('./assets/vendor/font-awesome/css/font-awesome.css')}}" />
 
-        
+
 
         <!-- Specific Page Vendor CSS -->
 
@@ -38,7 +38,6 @@
         <link rel="stylesheet" href="{{asset('./assets/style.css')}}" />
         <link rel="stylesheet" href="{{asset('./assets/vendor/pnotify/pnotify.custom.css')}}">
         <link rel="stylesheet" href="{{asset('./assets/vendor/magnific-popup/magnific-popup.css')}}">
-        <link rel="stylesheet" href="{{asset('./assets/vendor/bootstrap-datepicker/css/datepicker3.css')}}">
         <link rel="stylesheet" href="{{asset('./assets/vendor/isotope/jquery.isotope.css')}}">
         <link rel="stylesheet" href="{{asset('./assets/vendor/pnotify/pnotify.custom.css')}}">
         <!-- Theme Custom CSS -->
@@ -49,6 +48,8 @@
         <link rel="stylesheet" href="{{asset('./assets/vendor/jquery-datatables-bs3/assets/css/datatables.css')}}">
         <script src="{{asset('./assets/vendor/modernizr/modernizr.js')}}"></script>
         <link rel="stylesheet" href="{{asset('./assets/vendor/bootstrap-fileupload/bootstrap-fileupload.min.css')}}">
+        <!-- Dropzone -->
+        
         <style type="text/css">
         .select2-container .select2-choice {
                 display: block;
