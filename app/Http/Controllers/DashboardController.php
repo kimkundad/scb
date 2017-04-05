@@ -51,14 +51,70 @@ class DashboardController extends Controller
                   ->first();
 
 
+                  $Media = DB::table('useraccounts')
+                        ->select(
+                        'useraccounts.group_user'
+                        )
+                        ->where('group_user', 14)
+                        ->count();
+
+                  $Media_lim2 = DB::table('groupts')
+                        ->select(
+                        'groupts.*'
+                        )
+                        ->where('groupts.id', 14)
+                        ->first();
+
+                        $SCB = DB::table('useraccounts')
+                              ->select(
+                              'useraccounts.group_user'
+                              )
+                              ->where('group_user', 15)
+                              ->count();
+
+                        $SCB_lim2 = DB::table('groupts')
+                              ->select(
+                              'groupts.*'
+                              )
+                              ->where('groupts.id', 15)
+                              ->first();
+
+                              $Startup = DB::table('useraccounts')
+                                    ->select(
+                                    'useraccounts.group_user'
+                                    )
+                                    ->where('group_user', 16)
+                                    ->count();
+
+                              $Startup_lim2 = DB::table('groupts')
+                                    ->select(
+                                    'groupts.*'
+                                    )
+                                    ->where('groupts.id', 16)
+                                    ->first();
+
+
         $Attendee_lim = $Attendee_lim2->limit_group - $Attendee;
         $Investor_lim = $Investor_lim2->limit_group - $Investor;
+        $Media_lim = $Media_lim2->limit_group - $Media;
+        $SCB_lim = $SCB_lim2->limit_group - $SCB;
+        $Startup_lim = $Startup_lim2->limit_group - $Startup;
         //dd($Attendee_lim);
         $data['Attendee'] = $Attendee;
         $data['Attendee_lim'] = $Attendee_lim;
 
         $data['Investor'] = $Investor;
         $data['Investor_lim'] = $Investor_lim;
+
+        $data['Media'] = $Media;
+        $data['Media_lim'] = $Media_lim;
+
+
+        $data['SCB'] = $SCB;
+        $data['SCB_lim'] = $SCB_lim;
+
+        $data['Startup'] = $Startup;
+        $data['Startup_lim'] = $Startup_lim;
 
 
         $data['header'] = 'Dashboard';
