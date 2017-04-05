@@ -172,7 +172,7 @@
 
 @section('scripts')
 
-@if ($message = Session::get('success'))
+@if ($message = Session::get('success_user_edit'))
 <script type="text/javascript">
 var stack_bar_top = {"dir1": "down", "dir2": "right", "push": "top", "spacing1": 0, "spacing2": 0};
 var notice = new PNotify({
