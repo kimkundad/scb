@@ -61,7 +61,7 @@ Route::post('login', function()
     return Redirect::to('/');
 });
 
-Route::group(['middleware' => 'admin'], function () {
+Route::group(['middleware' => 'adminRole'], function () {
 
     Route::resource('admin/dashboard', 'DashboardController');
     Route::resource('admin/user', 'UseraccountController');
