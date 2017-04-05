@@ -49,7 +49,7 @@
 														<div class="summary">
 															<h4 class="title">Attendee</h4>
 															<div class="info">
-																<strong class="amount">{{$Attendee}}</strong>
+																<strong class="amount">ลงทะเบียน {{$Attendee}}</strong>
 																<span class="text-primary">(เหลือ {{$Attendee_lim}})</span>
 															</div>
 														</div>
