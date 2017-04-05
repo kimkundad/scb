@@ -9,6 +9,7 @@ use App\useraccount;
 use App\Groupt;
 use App\qrcord;
 use SimpleSoftwareIO\QrCode\BaconQrCodeGenerator;
+use Session;
 
 class UseraccountController extends Controller
 {
