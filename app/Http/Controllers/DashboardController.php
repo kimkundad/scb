@@ -28,18 +28,37 @@ class DashboardController extends Controller
             ->where('group_user', 12)
             ->count();
 
-            $Attendee_lim2 = DB::table('groupts')
+      $Attendee_lim2 = DB::table('groupts')
+            ->select(
+            'groupts.*'
+            )
+            ->where('groupts.id', 12)
+            ->first();
+
+
+            $Investor = DB::table('useraccounts')
+                  ->select(
+                  'useraccounts.group_user'
+                  )
+                  ->where('group_user', 13)
+                  ->count();
+
+            $Investor_lim2 = DB::table('groupts')
                   ->select(
                   'groupts.*'
                   )
-                  ->where('groupts.id', 12)
+                  ->where('groupts.id', 13)
                   ->first();
 
 
         $Attendee_lim = $Attendee_lim2->limit_group - $Attendee;
+        $Investor_lim = $Investor_lim2->limit_group - $Investor;
         //dd($Attendee_lim);
         $data['Attendee'] = $Attendee;
         $data['Attendee_lim'] = $Attendee_lim;
+
+        $data['Investor'] = $Investor;
+        $data['Investor_lim'] = $Investor_lim;
 
 
         $data['header'] = 'Dashboard';
