@@ -74,27 +74,44 @@
 											<fieldset>
 
 												<div class="form-group">
-													<label class="col-md-3 control-label" for="profileFirstName">First Name</label>
+													<label class="col-md-3 control-label" for="profileFirstName">Name</label>
 													<div class="col-md-8">
-														<input type="text" class="form-control" name="first_name" value="{{ $objs->name_user }}" id="profileFirstName">
+														<input type="text" class="form-control" name="name_user" value="{{ $objs->name_user }}" id="profileFirstName">
 													</div>
 												</div>
 												<div class="form-group">
-													<label class="col-md-3 control-label" for="profileLastName">Last Name</label>
+													<label class="col-md-3 control-label" for="profileLastName">Surname</label>
 													<div class="col-md-8">
-														<input type="text" class="form-control" name="last_name" value="{{ $objs->ser_name }}" id="profileLastName">
+														<input type="text" class="form-control" name="ser_name" value="{{ $objs->ser_name }}" id="profileLastName">
 													</div>
 												</div>
+
+
+
+												<div class="form-group">
+													<label class="col-md-3 control-label" for="profileCompany">Position</label>
+													<div class="col-md-8">
+														<input type="text" class="form-control" name="position_user" value="{{ $objs->position_user }}" id="profileCompany" readonly>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-md-3 control-label" for="profileCompany">Company</label>
+													<div class="col-md-8">
+														<input type="text" class="form-control" name="company_user" value="{{ $objs->company_user }}" id="profileCompany" readonly>
+													</div>
+												</div>
+
+
                         <div class="form-group">
 													<label class="col-md-3 control-label" for="profileCompany">Email</label>
 													<div class="col-md-8">
-														<input type="text" class="form-control" name="email" value="{{ $objs->email_user }}" id="profileCompany" readonly>
+														<input type="text" class="form-control" name="email_user" value="{{ $objs->email_user }}" id="profileCompany" readonly>
 													</div>
 												</div>
 												<div class="form-group">
-													<label class="col-md-3 control-label" for="profileCompany">Phone</label>
+													<label class="col-md-3 control-label" for="profileCompany">Mobile Phone No.</label>
 													<div class="col-md-8">
-														<input type="number" class="form-control" name="phone" value="{{ $objs->phone_user }}" id="profileCompany" >
+														<input type="number" class="form-control" name="phone_user" value="{{ $objs->phone_user }}" id="profileCompany" >
 													</div>
 												</div>
 
@@ -114,12 +131,7 @@
 
 
 
-												<div class="form-group">
-													<label class="col-md-3 control-label" for="profileAddress">Address</label>
-													<div class="col-md-8">
-														<textarea class="form-control" rows="2" name="address" id="profileBio">{{ $objs->address }}</textarea>
-													</div>
-												</div>
+
 
 											</fieldset>
 

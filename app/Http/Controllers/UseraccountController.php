@@ -103,7 +103,27 @@ class UseraccountController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $this->validate($request, [
+     'name_user' => 'required',
+     'ser_name' => 'required',
+     'email_user' => 'required',
+     'phone_user' => 'required',
+     'position_user' => 'required',
+     'company_user' => 'required',
+     'group_user' => 'required'
+      ]);
+
+     $package = useraccount::find($id);
+     $package->name_user = $request['name_user'];
+     $package->ser_name = $request['ser_name'];
+     $package->email_user = $request['email_user'];
+     $package->phone_user = $request['phone_user'];
+     $package->position_user = $request['position_user'];
+     $package->company_user = $request['company_user'];
+     $package->group_user = $request['group_user'];
+     $package->save();
+
+     return redirect(url('admin/user/'.$id.'/edit'))->with('success_user_edit','แก้ไขข้อมูลสำเร็จแล้วค่ะ');
     }
 
     /**
