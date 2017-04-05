@@ -3,7 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Requests;
+use App\useraccount;
+use App\Groupt;
+use App\qrcord;
+use SimpleSoftwareIO\QrCode\BaconQrCodeGenerator;
+use Session;
 
 class DashboardController extends Controller
 {
@@ -14,6 +20,26 @@ class DashboardController extends Controller
      */
     public function index()
     {
+
+      $Attendee = DB::table('useraccounts')
+            ->select(
+            'useraccounts.group_user'
+            )
+            ->where('group_user', 12)
+            ->count();
+
+            $Attendee_lim2 = DB::table('groupts')
+                  ->select(
+                  'groupts.*'
+                  )
+                  ->where('limit_group', 12)
+                  ->first();
+        $Attendee_lim = $Attendee_lim2->limit_group - $Attendee;
+        dd($Attendee_lim);
+        $data['Attendee'] = $Attendee;
+        $data['Attendee_lim'] = $Attendee_lim;
+
+
         $data['header'] = 'Dashboard';
         return view('admin.dashboard.index',$data);
     }
