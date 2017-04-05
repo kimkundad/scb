@@ -36,8 +36,8 @@ class DashboardController extends Controller
                   ->first();
 
 
-        //$Attendee_lim = $Attendee_lim2->limit_group - $Attendee;
-        dd($Attendee_lim2);
+        $Attendee_lim = $Attendee_lim2->limit_group - $Attendee;
+        dd($Attendee_lim);
         $data['Attendee'] = $Attendee;
         $data['Attendee_lim'] = $Attendee_lim;
 
