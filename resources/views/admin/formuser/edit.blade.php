@@ -91,13 +91,13 @@
 												<div class="form-group">
 													<label class="col-md-3 control-label" for="profileCompany">Position</label>
 													<div class="col-md-8">
-														<input type="text" class="form-control" name="position_user" value="{{ $objs->position_user }}" id="profileCompany" readonly>
+														<input type="text" class="form-control" name="position_user" value="{{ $objs->position_user }}" id="profileCompany" >
 													</div>
 												</div>
 												<div class="form-group">
 													<label class="col-md-3 control-label" for="profileCompany">Company</label>
 													<div class="col-md-8">
-														<input type="text" class="form-control" name="company_user" value="{{ $objs->company_user }}" id="profileCompany" readonly>
+														<input type="text" class="form-control" name="company_user" value="{{ $objs->company_user }}" id="profileCompany" >
 													</div>
 												</div>
 
@@ -105,7 +105,7 @@
                         <div class="form-group">
 													<label class="col-md-3 control-label" for="profileCompany">Email</label>
 													<div class="col-md-8">
-														<input type="text" class="form-control" name="email_user" value="{{ $objs->email_user }}" id="profileCompany" readonly>
+														<input type="text" class="form-control" name="email_user" value="{{ $objs->email_user }}" id="profileCompany" >
 													</div>
 												</div>
 												<div class="form-group">
