@@ -80,7 +80,7 @@
 
 
                 <div class="table-responsive">
-                <table id="example" class="display nowrap" cellspacing="0" width="100%">
+                <table id="example" class="display nowrap table" cellspacing="0" width="100%">
                   <thead>
                     <tr>
                       <th>QR</th>
