@@ -111,25 +111,25 @@
                       <td>
 
                         @if($u->status_user == 0)
-                          <a type="button" style="float:left; margin-right:3px; margin-top:0px;" class="btn btn-danger btn-xs"><i class="fa fa-frown-o "></i></a>
+                          <a type="button" style="float:left; margin: 3px;" class="btn btn-danger btn-xs"><i class="fa fa-frown-o "></i></a>
                           @elseif($u->status_user == 1)
-                           <a type="button" style="float:left; margin-right:3px; margin-top:0px;" class="btn btn-success btn-xs"><i class="fa fa-star"></i></a>
+                           <a type="button" style="float:left; margin: 3px;" class="btn btn-success btn-xs"><i class="fa fa-star"></i></a>
                              @else
-                             <a type="button" style="float:left; margin-right:3px; margin-top:0px;" class="btn btn-warning btn-xs"><i class="fa fa-meh-o"></i></a>
+                             <a type="button" style="float:left; margin: 3px;" class="btn btn-warning btn-xs"><i class="fa fa-meh-o"></i></a>
                              @endif
 
-                        <a style="float:left; margin-right:8px; " class="btn btn-success btn-xs " target="_blank"
+                        <a style="float:left; margin: 3px; " class="btn btn-success btn-xs " target="_blank"
                              download="{{$u->qrcode}}.jpg" href="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(300)->generate($u->Qid)) !!}"
                              role="button"><i class="fa fa-download"></i> </a>
 
 
-                        <a style="float:left; margin-right:8px;" class="btn btn-primary btn-xs"
+                        <a style="float:left; margin: 3px;" class="btn btn-primary btn-xs"
                         href="{{url('admin/user/'.$u->Aid.'/edit')}}" role="button"><i class="fa fa-wrench"></i> </a>
 
                           <form  action="{{url('admin/user/'.$u->Aid)}}" method="post" onsubmit="return(confirm('Do you want Delete'))">
                             <input type="hidden" name="_method" value="DELETE">
                              <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                            <button type="submit" class="btn btn-danger btn-xs"><i class="fa fa-times "></i></button>
+                            <button type="submit" class="btn btn-danger btn-xs" style="margin: 3px;"><i class="fa fa-times "></i></button>
                           </form>
 
 
