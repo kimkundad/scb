@@ -100,7 +100,7 @@
                     <tr>
                       <td>{{$u->Qid}}</td>
                       <td>{{$u->name_user}} {{$u->ser_name}}</td>
-                      <td><?=mb_substr(strip_tags($u->email_user),0,45,'UTF-8')?>..</td>
+                      <td><?=mb_substr(strip_tags($u->email_user),0,32,'UTF-8')?>..</td>
                       <td>{{$u->phone_user}}</td>
                       <td>{{$u->group_name}}</td>
                       <td>{{$u->position_user}}</td>
