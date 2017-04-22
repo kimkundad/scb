@@ -52,7 +52,7 @@
 
 
                 <div class="form-group">
-														<label class="col-sm-4 control-label">Media </label>
+														<label class="col-sm-4 control-label">SCB </label>
 
 														<div class="col-sm-8">
                               @if($attendee)
