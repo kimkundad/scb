@@ -52,7 +52,7 @@
 
 
                 <div class="form-group">
-														<label class="col-sm-4 control-label">Attendee</label>
+														<label class="col-sm-4 control-label">Investor </label>
 
 														<div class="col-sm-8">
                               @if($attendee)
