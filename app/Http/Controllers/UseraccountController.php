@@ -54,7 +54,7 @@ class UseraccountController extends Controller
             )
             ->leftjoin('groupts', 'useraccounts.group_user', '=', 'groupts.id')
             ->leftjoin('qrcords', 'useraccounts.id', '=', 'qrcords.user_id')
-            ->where('useraccounts.group_user', 15)
+            ->where('useraccounts.group_user', 16)
             ->get();
 
       //dd($attendee);
