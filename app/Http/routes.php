@@ -66,5 +66,6 @@ Route::group(['middleware' => 'adminRole'], function () {
     Route::resource('admin/dashboard', 'DashboardController');
     Route::resource('admin/user', 'UseraccountController');
     Route::resource('admin/group', 'GroupController');
+    Route::resource('admin/loadQR', 'UseraccountController@loadQR');
 
 });

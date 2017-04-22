@@ -42,6 +42,31 @@ class UseraccountController extends Controller
     }
 
 
+    public function loadQR()
+    {
+      $attendee  = DB::table('useraccounts')
+            ->select(
+            'useraccounts.*',
+            'useraccounts.id as Aid',
+            'groupts.*',
+            'qrcords.qrcode as Qid',
+            'qrcords.*'
+            )
+            ->leftjoin('groupts', 'useraccounts.group_user', '=', 'groupts.id')
+            ->leftjoin('qrcords', 'useraccounts.id', '=', 'qrcords.user_id')
+            ->where('useraccounts.group_user', 12)
+            ->get();
+
+      //dd($attendee);
+
+
+      $data['attendee'] = $attendee;
+      $data['datahead'] = "รายชื่อในระบบทั้งหมด";
+      $data['i'] = $i = 0;
+      return view('admin.formuser.loadqr', $data);
+    }
+
+
 
 
     /**

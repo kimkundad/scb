@@ -32,6 +32,7 @@ html.no-overflowscrolling .nano > .nano-pane > .nano-slider {
 											<span>Dashboard</span>
 										</a>
 									</li>
+
 									<li {{ (Request::is('admin/user*') ? 'class=nav-expanded' : '') }} >
 										<a href="{{url('admin/user/')}}" >
 											<i class="fa fa-male" aria-hidden="true"></i>
@@ -43,6 +44,14 @@ html.no-overflowscrolling .nano > .nano-pane > .nano-slider {
 										<a href="{{url('admin/group/')}}" >
 											<i class="fa fa-external-link" aria-hidden="true"></i>
 											<span>Groups</span>
+										</a>
+									</li>
+
+
+                  <li {{ (Request::is('admin/loadQR*') ? 'class=nav-expanded' : '') }} >
+										<a href="{{url('admin/loadQR/')}}" >
+											<i class="fa fa-qrcode" aria-hidden="true"></i>
+											<span>QR code</span>
 										</a>
 									</li>
 
